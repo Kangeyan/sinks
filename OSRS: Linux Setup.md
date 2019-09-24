@@ -1,5 +1,5 @@
-# Installing OSRS in Linux
-## On a Debian VM running in ChromeOS, in 09/2019
+# Installing OSRS in Linux, 09/2019
+## In a Debian VM running on ChromeOS
 Extracting launcher from the windows .msi installer, using it run using default-jre. All on bash.
 
 ### Get the system upto date
@@ -17,7 +17,7 @@ mkdir -p tmpOSrs/bak
 ```
 
 ### Download
-`wget -O 'tmpOSsrs/OldSchool.msi' 'http://www.runescape.com/downloads/oldschool.msi'`
+`wget -O 'tmpOSrs/OldSchool.msi' 'http://www.runescape.com/downloads/oldschool.msi'`
 
 ### Extract
 ```
@@ -40,8 +40,9 @@ cp ~/tmpOSrs/bak/jagexappletviewer.jar ~/osrs/.
 ```
 
 ### Run OSRS in background
+* replace <username> with your user name
 ```
-/usr/bin/java' -Duser.home='/home/suryakangeyan/osrs' -Djava.class.path='/home/suryakangeyan/osrs/jagexappletviewer.jar' -Dcom.jagex.config='http://oldschool.runescape.com/jav_config.ws' -Dawt.useSystemAAFontSettings='on' -Dswing.aatext='true' -Dhttps.protocols='TLSv1.2' -Dsun.java2d.opengl='false' -Dsun.java2d.uiScale='1' 'jagexappletviewer' 'oldschool' &
+'/usr/bin/java' -Duser.home='/home/<username>/osrs' -Djava.class.path='/home/<username>/osrs/jagexappletviewer.jar' -Dcom.jagex.config='http://oldschool.runescape.com/jav_config.ws' -Dawt.useSystemAAFontSettings='on' -Dswing.aatext='true' -Dhttps.protocols='TLSv1.2' -Dsun.java2d.opengl='false' -Dsun.java2d.uiScale='1' 'jagexappletviewer' 'oldschool' &
 ```
 
 ### Cleanup
@@ -49,5 +50,5 @@ cp ~/tmpOSrs/bak/jagexappletviewer.jar ~/osrs/.
 
 ### .bashrc shortcut
 ```
-alias osrs="'/usr/bin/java' -Duser.home='/home/suryakangeyan/osrs' -Djava.class.path='/home/suryakangeyan/osrs/jagexappletviewer.jar' -Dcom.jagex.config='http://oldschool.runescape.com/jav_config.ws' -Dawt.useSystemAAFontSettings='on' -Dswing.aatext='true' -Dhttps.protocols='TLSv1.2' -Dsun.java2d.opengl='false' -Dsun.java2d.uiScale='1' 'jagexappletviewer' 'oldschool' &> /dev/null &"
+alias osrs="'/usr/bin/java' -Duser.home='/home/<username>/osrs' -Djava.class.path='/home/<username>/osrs/jagexappletviewer.jar' -Dcom.jagex.config='http://oldschool.runescape.com/jav_config.ws' -Dawt.useSystemAAFontSettings='on' -Dswing.aatext='true' -Dhttps.protocols='TLSv1.2' -Dsun.java2d.opengl='false' -Dsun.java2d.uiScale='1' 'jagexappletviewer' 'oldschool' &> /dev/null &"
 ```
